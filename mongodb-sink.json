@@ -1,0 +1,15 @@
+{
+    "name" : "mongodb-sink",
+    "config":
+    {
+    "connector.class" : "com.mongodb.kafka.connect.MongoSinkConnector",
+    "tasks.max" : "1",
+    "topics" : "seedts.seedts.client.table",
+    "connection.uri" : "mongodb://mongo:27017,mongo2:27017,mongo3:27017/db?replicaSet=dbrs",
+    "database": "seedts-sink",
+    "collection": "client-sink",
+    "max.num.retries": "1",
+    "retries.defer.timeout": "5000",
+    "document.id.strategy.overwrite.existing": "true"
+    }
+}
